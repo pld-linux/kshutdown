@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kshutdown.lang
 %defattr(644,root,root,755)
-%doc README AUTHORS ChangeLog FAQ TODO
+%doc README AUTHORS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/kshutdown
 %{_datadir}/apps/kshutdown
 %{_iconsdir}/hicolor/*/apps/kshutdown.png
