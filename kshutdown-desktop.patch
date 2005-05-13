@@ -1,34 +1,20 @@
---- kshutdown-0.2.0/kshutdown/kshutdown.desktop.orig	2004-05-07 15:13:47.000000000 +0200
-+++ kshutdown-0.2.0/kshutdown/kshutdown.desktop	2004-07-21 22:27:48.966346964 +0200
-@@ -1,7 +1,7 @@
- [Desktop Entry]
- Comment=A Shut Down Utility for KDE
- Comment[en_US]=A Shut Down Utility for KDE
--Comment[pl]=Narzêdzie do zamykania systemu dla KDE
-+Comment[pl]=NarzÄ™dzie do zamykania systemu dla KDE
- DocPath=kshutdown/index.html
- Encoding=UTF-8
- Exec=kshutdown
-@@ -18,3 +18,5 @@
+diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop kshutdown-0.6.0/kshutdown/kshutdown.desktop
+--- kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop	2005-05-13 16:06:59.000000000 +0200
++++ kshutdown-0.6.0/kshutdown/kshutdown.desktop	2005-05-13 16:12:05.000000000 +0200
+@@ -20,3 +20,5 @@
+ X-DCOP-ServiceType=none
+ X-KDE-SubstituteUID=false
+ X-KDE-Username=
++Categories=Qt:KDE:Utility;System;
++# vi: encoding=utf-8
+\ Brak znaku nowej linii na koñcu pliku
+diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop
+--- kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop	2005-05-13 16:06:59.000000000 +0200
++++ kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop	2005-05-13 16:09:54.000000000 +0200
+@@ -23,3 +23,5 @@
  X-DCOP-ServiceType=none
  X-KDE-SubstituteUID=false
  X-KDE-Username=
 +Categories=Qt;KDE;Utility;System;
 +# vi: encoding=utf-8
---- kshutdown-0.2.0/kshutdown/kshutdownwizard.desktop.orig	2004-06-05 16:49:05.000000000 +0200
-+++ kshutdown-0.2.0/kshutdown/kshutdownwizard.desktop	2004-07-21 22:29:11.025699513 +0200
-@@ -1,7 +1,7 @@
- [Desktop Entry]
- Comment=A Shut Down Utility for KDE
- Comment[en_US]=A Shut Down Utility for KDE
--Comment[pl]=Narzêdzie do zamykania systemu dla KDE
-+Comment[pl]=NarzÄ™dzie do zamykania systemu dla KDE
- DocPath=kshutdown/index.html
- Encoding=UTF-8
- Exec=kshutdown --wizard
-@@ -18,3 +18,5 @@
- X-DCOP-ServiceType=none
- X-KDE-SubstituteUID=false
- X-KDE-Username=
-+Categories=Qt;KDE;Utility;System;
-+# vi: encoding=utf-8
+\ Brak znaku nowej linii na koñcu pliku
