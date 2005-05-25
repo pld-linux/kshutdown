@@ -5,7 +5,7 @@ diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop kshutdown-0.6.0/kshut
  X-DCOP-ServiceType=none
  X-KDE-SubstituteUID=false
  X-KDE-Username=
-+Categories=Qt:KDE:Utility;System;
++Categories=Qt;KDE;Utility;System;
 +# vi: encoding=utf-8
 \ Brak znaku nowej linii na koñcu pliku
 diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop
