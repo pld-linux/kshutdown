@@ -7,7 +7,6 @@ diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop kshutdown-0.6.0/kshut
  X-KDE-Username=
 +Categories=Qt;KDE;Utility;System;
 +# vi: encoding=utf-8
-\ Brak znaku nowej linii na koñcu pliku
 diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop
 --- kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop	2005-05-13 16:06:59.000000000 +0200
 +++ kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop	2005-05-13 16:09:54.000000000 +0200
@@ -17,4 +16,3 @@ diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop kshutdown-0.6.0
  X-KDE-Username=
 +Categories=Qt;KDE;Utility;System;
 +# vi: encoding=utf-8
-\ Brak znaku nowej linii na koñcu pliku
