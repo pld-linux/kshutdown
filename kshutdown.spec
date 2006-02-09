@@ -1,17 +1,18 @@
 Summary:	KDE application for closing Linux
 Summary(pl):	Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
-Version:	0.6.1
+Version:	0.8.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kshutdown/%{name}-%{version}.tar.bz2
-# Source0-md5:	9a72132a316e38951bd8d84855ddeefc
+# Source0-md5:	6acd45acc5c0669b0973f0246e4bcca7
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
+Requires:	kdelibs >= 3.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,10 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}
-mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/*.desktop \
-	$RPM_BUILD_ROOT%{_desktopdir}
-
 %find_lang %{name} --with-kde
 
 %clean
@@ -52,6 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/kshutdown
 %{_datadir}/apps/kconf_update/kshutdown.upd
+%{_libdir}/kde3/kshutdown*
 %{_datadir}/apps/kshutdown
 %{_iconsdir}/hicolor/*/apps/kshutdown.png
 %{_desktopdir}/*.desktop
+%{_datadir}/apps/kicker/applets/kshutdownlockout.desktop
