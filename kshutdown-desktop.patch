@@ -1,18 +1,9 @@
-diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop kshutdown-0.6.0/kshutdown/kshutdown.desktop
---- kshutdown-0.6.0.orig/kshutdown/kshutdown.desktop	2005-05-13 16:06:59.000000000 +0200
-+++ kshutdown-0.6.0/kshutdown/kshutdown.desktop	2005-05-13 16:12:05.000000000 +0200
-@@ -20,3 +20,5 @@
- X-DCOP-ServiceType=none
- X-KDE-SubstituteUID=false
- X-KDE-Username=
-+Categories=Qt;KDE;Utility;System;
-+# vi: encoding=utf-8
-diff -urN kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop
---- kshutdown-0.6.0.orig/kshutdown/kshutdownwizard.desktop	2005-05-13 16:06:59.000000000 +0200
-+++ kshutdown-0.6.0/kshutdown/kshutdownwizard.desktop	2005-05-13 16:09:54.000000000 +0200
-@@ -23,3 +23,5 @@
- X-DCOP-ServiceType=none
- X-KDE-SubstituteUID=false
- X-KDE-Username=
-+Categories=Qt;KDE;Utility;System;
+--- kshutdown-0.8.2/kshutdown/kshutdown.desktop	2006-02-09 15:51:47.000000000 +0100
++++ kshutdown-0.8.2/kshutdown/kshutdown.desktop	2006-02-09 16:11:19.000000000 +0100
+@@ -15,4 +15,5 @@
+ GenericName[pl]=Narzędzie do zamykania systemu
+ DocPath=kshutdown/index.html
+ Type=Application
+-Categories=KDE;Application;Utility
++Categories=Qt;KDE;Utility;System
 +# vi: encoding=utf-8
