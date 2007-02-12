@@ -1,6 +1,6 @@
 %define		_beta	beta
 Summary:	KDE application for closing Linux
-Summary(pl):	Aplikacja KDE do zamykania Linuksa
+Summary(pl.UTF-8):   Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
 Version:	0.9.1
 Release:	0.%{_beta}.1
@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KShutDown helps closing and restarting Linux.
 
-%description -l pl
-KShutDown s≥uøy do zamykania lub restartowania systemu Linuks.
+%description -l pl.UTF-8
+KShutDown s≈Çu≈ºy do zamykania lub restartowania systemu Linuks.
 
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
