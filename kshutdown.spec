@@ -1,6 +1,6 @@
 %define		_beta	beta
 Summary:	KDE application for closing Linux
-Summary(pl.UTF-8):   Aplikacja KDE do zamykania Linuksa
+Summary(pl.UTF-8):	Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
 Version:	0.9.1
 Release:	0.%{_beta}.1
