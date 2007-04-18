@@ -1,13 +1,12 @@
-%define		_beta	beta
 Summary:	KDE application for closing Linux
 Summary(pl.UTF-8):	Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
-Version:	0.9.1
-Release:	0.%{_beta}.1
+Version:	1.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/kshutdown/%{name}-%{version}%{_beta}.tar.bz2
-# Source0-md5:	44bd0ff7c6fae44eb24831ebf8446954
+Source0:	http://dl.sourceforge.net/kshutdown/%{name}-%{version}.tar.bz2
+# Source0-md5:	dbacab8f1453599e9bad89e088248c68
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automake
@@ -23,7 +22,7 @@ KShutDown helps closing and restarting Linux.
 KShutDown służy do zamykania lub restartowania systemu Linuks.
 
 %prep
-%setup -q -n %{name}-%{version}%{_beta}
+%setup -q
 %patch0 -p1
 
 %build
