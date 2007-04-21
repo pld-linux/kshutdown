@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kshutdown/%{name}-%{version}.tar.bz2
 # Source0-md5:	dbacab8f1453599e9bad89e088248c68
 Patch0:		%{name}-desktop.patch
+Patch1:		kde-ac260-lt.patch
 URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
@@ -24,6 +25,7 @@ KShutDown służy do zamykania lub restartowania systemu Linuks.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* admin
