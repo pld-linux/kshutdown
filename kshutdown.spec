@@ -1,4 +1,5 @@
 %define	prever	beta9
+%define	kdever	4.4.4
 
 Summary:	KDE application for closing Linux
 Summary(pl.UTF-8):	Aplikacja KDE do zamykania Linuksa
@@ -11,15 +12,11 @@ Source0:	http://dl.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.
 # Source0-md5:	4a8a8f5f5e8323cf23ff37078d182d4e
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
-BuildRequires:	QtDBus-devel
-BuildRequires:	QtGui-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	automoc4
-BuildRequires:	cmake
-BuildRequires:	gettext-devel
-BuildRequires:	kde4-kdebase-workspace-devel
-BuildRequires:	phonon-devel
+BuildRequires:	automoc4 >= 0.9.88
+BuildRequires:	cmake >= 2.8.0
+BuildRequires:	kde4-kdelibs-devel >= %{kdever}
+BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
+BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
