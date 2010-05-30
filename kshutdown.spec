@@ -1,19 +1,27 @@
+%define	prever	beta9
+
 Summary:	KDE application for closing Linux
 Summary(pl.UTF-8):	Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
-Version:	1.0.2
-Release:	1
+Version:	2.0
+Release:	0.%{prever}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/kshutdown/%{name}-%{version}.tar.bz2
-# Source0-md5:	3e945657f856adf367a18fc11cf25382
+Source0:	http://dl.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.zip
+# Source0-md5:	4a8a8f5f5e8323cf23ff37078d182d4e
 Patch0:		%{name}-desktop.patch
-Patch1:		kde-ac260-lt.patch
 URL:		http://kshutdown.sourceforge.net/
+BuildRequires:	QtDBus-devel
+BuildRequires:	QtGui-devel
+BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel
+BuildRequires:	automoc4
+BuildRequires:	cmake
+BuildRequires:	gettext-devel
+BuildRequires:	kde4-kdebase-workspace-devel
+BuildRequires:	phonon-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
-Requires:	kdelibs >= 3.3.0
+BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,23 +31,31 @@ KShutDown helps closing and restarting Linux.
 KShutDown służy do zamykania lub restartowania systemu Linuks.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{prever}
 %patch0 -p1
-%patch1 -p1
 
 %build
-cp -f /usr/share/automake/config.* admin
-%configure \
-	--disable-rpath \
-	--with-qt-libraries=%{_libdir}
+install -d build
+cd build
+%cmake \
+	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
+	-LIBTIDY_INCLUDE_DIR=%{_includedir} \
+%if "%{_lib}" == "lib64"
+	-DLIB_SUFFIX=64 \
+%endif
+	../
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+	kde_htmldir=%{_kdedocdir} \
+	kde_libs_htmldir=%{_kdedocdir}
 
 %find_lang %{name} --with-kde
 
@@ -48,11 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc ChangeLog TODO
 %attr(755,root,root) %{_bindir}/kshutdown
-%{_datadir}/apps/kconf_update/kshutdown.upd
-%{_libdir}/kde3/kshutdown*
 %{_datadir}/apps/kshutdown
-%{_iconsdir}/hicolor/*/apps/kshutdown.png
-%{_desktopdir}/*.desktop
-%{_datadir}/apps/kicker/applets/kshutdownlockout.desktop
+%{_desktopdir}/kde4/*.desktop
+%{_iconsdir}/hicolor/*/apps/kshutdown.*

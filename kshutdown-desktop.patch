@@ -1,9 +1,8 @@
---- kshutdown-0.8.2/kshutdown/kshutdown.desktop	2006-02-09 15:51:47.000000000 +0100
-+++ kshutdown-0.8.2/kshutdown/kshutdown.desktop	2006-02-09 16:11:19.000000000 +0100
-@@ -15,4 +15,5 @@
- GenericName[pl]=Narzędzie do zamykania systemu
- DocPath=kshutdown/index.html
+--- kshutdown-2.0beta9/src/kshutdown.desktop.orig	2010-05-30 00:00:00.000000000 +0200
++++ kshutdown-2.0beta9/src/kshutdown.desktop	2010-05-30 00:00:00.000000000 +0200
+@@ -35,4 +35,4 @@
  Type=Application
--Categories=KDE;Application;Utility
+ 
+ # DOC: http://standards.freedesktop.org/menu-spec/latest/apa.html
+-Categories=Utility;
 +Categories=Qt;KDE;Utility;System
-+# vi: encoding=utf-8
