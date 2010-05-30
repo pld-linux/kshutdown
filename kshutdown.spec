@@ -15,8 +15,8 @@ URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	gettext-devel
-BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
+BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unzip
