@@ -8,7 +8,7 @@ Version:	2.0
 Release:	0.%{prever}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.zip
+Source0:	http://downloads.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.zip
 # Source0-md5:	7746d2eed57e68bc677f0d725df6d71a
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
@@ -18,6 +18,8 @@ BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	phonon-devel >= 4.4.1
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
