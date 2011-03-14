@@ -1,4 +1,4 @@
-%define	prever	beta11
+%define	prever	beta12
 %define	kdever	4.5.1
 
 Summary:	KDE application for closing Linux
@@ -9,7 +9,7 @@ Release:	0.%{prever}.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.zip
-# Source0-md5:	7746d2eed57e68bc677f0d725df6d71a
+# Source0-md5:	392a345dab6fc4f6125007171bc8cb9c
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automoc4 >= 0.9.88
