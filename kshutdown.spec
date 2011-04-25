@@ -1,15 +1,14 @@
-%define	prever	beta12
-%define	kdever	4.5.1
+%define	kdever	4.6.2
 
 Summary:	KDE application for closing Linux
 Summary(pl.UTF-8):	Aplikacja KDE do zamykania Linuksa
 Name:		kshutdown
 Version:	2.0
-Release:	0.%{prever}.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://downloads.sourceforge.net/kshutdown/%{name}-source-%{version}%{prever}.zip
-# Source0-md5:	392a345dab6fc4f6125007171bc8cb9c
+Source0:	http://downloads.sourceforge.net/kshutdown/%{name}-source-%{version}.zip
+# Source0-md5:	af9d2bfda919e7712319e14e6ca89610
 Patch0:		%{name}-desktop.patch
 URL:		http://kshutdown.sourceforge.net/
 BuildRequires:	automoc4 >= 0.9.88
@@ -20,7 +19,7 @@ BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,20 +30,13 @@ KShutDown helps closing and restarting Linux.
 KShutDown służy do zamykania lub restartowania systemu Linuks.
 
 %prep
-%setup -q -n %{name}-%{version}%{prever}
+%setup -q
 %patch0 -p1
 
 %build
 install -d build
 cd build
 %cmake \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
-	-LIBTIDY_INCLUDE_DIR=%{_includedir} \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64 \
-%endif
 	../
 
 %{__make}
@@ -56,6 +48,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
+
+# remove unsupported locales
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{sr@ijekavian,sr@ijekavianlatin}
 
 %find_lang %{name} --with-kde
 
